@@ -1,0 +1,136 @@
+{
+  "name": "@allow2/allow2automate-playstation",
+  "shortName": "playstation",
+  "version": "0.0.1",
+  "description": "Control PlayStation Network access with Allow2 parental controls",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "jsnext:main": "dist/index.es.js",
+  "scripts": {
+    "test": "react-scripts test --env=jsdom",
+    "build": "rollup -c",
+    "start": "rollup -c -w",
+    "prepublish": "npm run build",
+    "predeploy": "cd example && npm install && npm run build",
+    "deploy": "gh-pages -d example/build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Allow2/allow2automate-playstation"
+  },
+  "bugs": {
+    "url": "https://github.com/Allow2/allow2automate-playstation/issues"
+  },
+  "homepage": "https://github.com/Allow2/allow2automate-playstation#readme",
+  "allow2Token": "<INSERT TOKEN HERE>",
+  "keywords": [
+    "allow2automate",
+    "playstation",
+    "psn",
+    "gaming",
+    "plugin",
+    "parental-controls"
+  ],
+  "author": {
+    "name": "Allow2",
+    "url": "https://allow2.com"
+  },
+  "license": "MIT",
+  "allow2automate": {
+    "plugin": true,
+    "pluginId": "allow2automate-playstation",
+    "displayName": "PlayStation Network Controls",
+    "category": "Gaming",
+    "permissions": [
+      "network",
+      "configuration"
+    ],
+    "minAppVersion": "2.0.0",
+    "api": {
+      "actions": [
+        {
+          "id": "checkQuota",
+          "name": "Check Quota",
+          "description": "Check Allow2 quota for PlayStation access"
+        },
+        {
+          "id": "enableAccess",
+          "name": "Enable Access",
+          "description": "Enable PlayStation Network access"
+        },
+        {
+          "id": "disableAccess",
+          "name": "Disable Access",
+          "description": "Disable PlayStation Network access"
+        },
+        {
+          "id": "reportUsage",
+          "name": "Report Usage",
+          "description": "Report play time to Allow2"
+        }
+      ],
+      "triggers": [
+        {
+          "id": "quotaExceeded",
+          "name": "Quota Exceeded",
+          "description": "Triggered when child's play time quota is exceeded"
+        },
+        {
+          "id": "quotaRenewed",
+          "name": "Quota Renewed",
+          "description": "Triggered when child's quota is renewed"
+        },
+        {
+          "id": "sessionStarted",
+          "name": "Session Started",
+          "description": "Triggered when a play session starts"
+        },
+        {
+          "id": "sessionEnded",
+          "name": "Session Ended",
+          "description": "Triggered when a play session ends"
+        }
+      ]
+    }
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.13.9"
+  },
+  "peerDependencies": {
+    "react": "^16.0.0 || ^17.0.0",
+    "react-dom": "^16.0.0 || ^17.0.0",
+    "@material-ui/core": "^4.0.0"
+  },
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.13.8",
+    "@babel/plugin-external-helpers": "^7.12.13",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-proposal-decorators": "^7.0.0",
+    "@babel/plugin-proposal-do-expressions": "^7.0.0",
+    "@babel/plugin-proposal-export-default-from": "^7.0.0",
+    "@babel/plugin-proposal-export-namespace-from": "^7.0.0",
+    "@babel/plugin-proposal-function-bind": "^7.0.0",
+    "@babel/plugin-proposal-function-sent": "^7.0.0",
+    "@babel/plugin-proposal-json-strings": "^7.0.0",
+    "@babel/plugin-proposal-logical-assignment-operators": "^7.0.0",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.0.0",
+    "@babel/plugin-proposal-numeric-separator": "^7.0.0",
+    "@babel/plugin-proposal-optional-chaining": "^7.0.0",
+    "@babel/plugin-proposal-pipeline-operator": "^7.0.0",
+    "@babel/plugin-proposal-throw-expressions": "^7.0.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/plugin-syntax-import-meta": "^7.0.0",
+    "@babel/plugin-transform-runtime": "^7.13.9",
+    "@babel/preset-env": "^7.13.9",
+    "@babel/preset-react": "^7.12.13",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-commonjs": "^17.1.0",
+    "@rollup/plugin-node-resolve": "^11.2.0",
+    "rollup": "^2.40.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.0"
+  }
+}

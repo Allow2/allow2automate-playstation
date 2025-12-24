@@ -1,0 +1,51 @@
+{
+  "name": "allow2automate-playstation",
+  "version": "1.0.0",
+  "description": "PlayStation Network parental controls integration for Allow2 Automate",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint src/**/*.js",
+    "dev": "node --watch index.js"
+  },
+  "keywords": [
+    "allow2",
+    "playstation",
+    "parental-controls",
+    "psn",
+    "automation"
+  ],
+  "author": "Allow2 Team",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.0",
+    "dotenv": "^16.3.1",
+    "node-cache": "^5.1.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.50.0",
+    "jest": "^29.7.0"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0"
+  },
+  "allow2Plugin": {
+    "version": "1.0",
+    "capabilities": [
+      "quota-check",
+      "time-reporting",
+      "remote-control",
+      "account-management"
+    ],
+    "configUI": "./src/config-ui.js",
+    "requiresAuth": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/allow2/allow2automate-playstation"
+  },
+  "bugs": {
+    "url": "https://github.com/allow2/allow2automate-playstation/issues"
+  }
+}
